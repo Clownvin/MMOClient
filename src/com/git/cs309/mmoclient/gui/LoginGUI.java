@@ -15,11 +15,13 @@ public final class LoginGUI extends JFrame {
 	 */
 	private static final long serialVersionUID = -4537727222546132067L;
 	
+	private static final LoginGUI SINGLETON = new LoginGUI();
+	
 	private final JTextField usernameField = new JTextField("Username");
 	private final JPasswordField passwordField = new JPasswordField("Password");
 	private final JButton loginButton = new JButton("Log in");
 	
-	public LoginGUI() {
+	private LoginGUI() {
 		loginButton.addActionListener(new ActionListener() {
 
 			@Override
@@ -42,6 +44,9 @@ public final class LoginGUI extends JFrame {
 		add(mainPanel);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		pack();
-		setVisible(true);
+	}
+	
+	public static LoginGUI getSingleton() {
+		return SINGLETON;
 	}
 }

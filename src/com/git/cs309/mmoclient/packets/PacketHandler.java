@@ -2,6 +2,8 @@ package com.git.cs309.mmoclient.packets;
 
 import javax.swing.JOptionPane;
 
+import com.git.cs309.mmoclient.gui.GameGUI;
+import com.git.cs309.mmoclient.gui.LoginGUI;
 import com.git.cs309.mmoserver.packets.ErrorPacket;
 import com.git.cs309.mmoserver.packets.MessagePacket;
 import com.git.cs309.mmoserver.packets.EventPacket;
@@ -34,7 +36,8 @@ public final class PacketHandler {
 			EventPacket eventPacket = (EventPacket) packet;
 			switch (eventPacket.getEventCode()) {
 			case EventPacket.LOGIN_SUCCESS:
-				JOptionPane.showMessageDialog(null, "Successful login!");
+				LoginGUI.getSingleton().setVisible(false);
+				GameGUI.getSingleton().setVisible(true);
 				break;
 			default:
 				System.err.println("No case for event code: "+eventPacket.getEventCode());
