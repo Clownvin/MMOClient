@@ -9,7 +9,7 @@ public final class ChatComponent extends Component {
 	private final List<ChatMessage> globalMessages = new ArrayList<>();
 	private final List<ChatMessage> localMessages = new ArrayList<>();
 	private final List<ChatMessage> privateMessages = new ArrayList<>();
-	
+
 	public void addMessage(final MessageGroup group, final String message) {
 		switch (group) {
 		case PARTY:
@@ -25,7 +25,7 @@ public final class ChatComponent extends Component {
 			privateMessages.add(new ChatMessage(group, message));
 			break;
 		default:
-			System.err.println("No case for message group: "+group);
+			System.err.println("No case for message group: " + group);
 		}
 	}
 }

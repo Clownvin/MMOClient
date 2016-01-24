@@ -14,7 +14,7 @@ public class Connection extends AbstractConnection {
 	public Connection(Socket socket) throws IOException {
 		super(socket);
 	}
-	
+
 	@Override
 	public void run() {
 		while (!this.disconnected) {
